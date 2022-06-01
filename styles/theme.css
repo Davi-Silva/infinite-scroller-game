@@ -1,0 +1,28 @@
+:root {
+  --header-background-color: transparent;
+  --main-background-color: #91b3f1;
+
+  --header-height: 4rem;
+  --footer-height: 1.5rem;
+  --pipe-width: 5rem;
+  --pipe-height: 8rem;
+
+  --header-brand-font-size: 1.6rem;
+  --footer-p-font-size: 1rem;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter';
+}
