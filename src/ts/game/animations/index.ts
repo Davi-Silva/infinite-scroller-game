@@ -14,3 +14,7 @@ export const stopAnimations = () => {
     element.style.left = `${pos.left}px`;
   });
 };
+
+export const removeCoin = () => {
+  document.querySelector('.coin')?.remove();
+};

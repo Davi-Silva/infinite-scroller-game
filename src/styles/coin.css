@@ -1,0 +1,9 @@
+.coin {
+  height: var(--coin-height);
+  width: var(--coin-width);
+  background-color: var(--coin-background-color);
+  border: 1px solid var(--coin-border-color);
+  border-radius: var(--coin-round);
+  position: absolute;
+  left: 0;
+}

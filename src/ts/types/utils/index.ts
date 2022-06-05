@@ -4,3 +4,13 @@ export type GetPositionInObjectType = {
   right: number;
   bottom: number;
 };
+
+export type GetDimensionsInObjectType = {
+  height: number;
+  width: number;
+};
+
+export type AssetStatsType = {
+  pos: GetPositionInObjectType;
+  dimensions: GetDimensionsInObjectType;
+};

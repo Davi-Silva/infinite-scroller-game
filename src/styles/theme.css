@@ -6,13 +6,18 @@
 
   --header-height: 4rem;
   --footer-height: 1.5rem;
+  --player-width: 3rem;
+  --player-height: 4rem;
   --pipe-width: 5rem;
   --pipe-height: 8rem;
+  --coin-height: 2rem;
+  --coin-width: 2rem;
 
   --header-brand-font-size: 1.6rem;
   --footer-p-font-size: 1rem;
 
   --btn-round-50: 0.22rem;
+  --coin-round: 10rem;
 
   --start-btn-border-color: #4b4b00;
   --start-btn-background-color: #eaea05;
@@ -21,6 +26,9 @@
   --end-game-btn-border-color: #700000;
   --end-game-btn-background-color: red;
   --end-game-btn-color: #700000;
+
+  --coin-background-color: #eaea05;
+  --coin-border-color: #4b4b00;
 }
 
 html,

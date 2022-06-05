@@ -1,8 +1,12 @@
-import { pipe } from '../constants';
-import { getPositionInObject } from '../utils';
-import { addToRewindBuffer } from './rewind';
-import { stopAnimations } from './animations';
-import { stats, updateAssetPosition } from '../stats';
+import { pipe, titleScreen, score } from '../constants';
+import { removeCoin, stopAnimations } from './animations';
+import {
+  parseToCollisionObject,
+  stats,
+  updateAssetPosition,
+  updateScore,
+} from '../stats';
+import { checkCollision, checkHasCoinCollided } from './checks/colision';
 
 export let hasGameStarted = false;
 let gameLoop: number;
@@ -10,8 +14,25 @@ let gameLoop: number;
 export const startGame = () => {
   hasGameStarted = true;
 
+  titleScreen?.remove();
+
   gameLoop = setInterval(() => {
-    addToRewindBuffer(pipe.offsetLeft);
+    const hasPipeCollided = checkCollision(
+      parseToCollisionObject(stats.player.pos, stats.player.dimensions),
+      parseToCollisionObject(stats.pipe.pos, stats.pipe.dimensions)
+    );
+
+    if (hasPipeCollided) endGame();
+
+    let hasCoinCollided = checkHasCoinCollided(stats.coins);
+
+    if (hasCoinCollided) {
+      updateScore(10);
+      removeCoin();
+      score.innerHTML = `${stats.score}`;
+      hasCoinCollided = false;
+    }
+
     updateAssetPosition('pipe');
     updateAssetPosition('player');
   }, 10);
@@ -24,4 +45,5 @@ export const endGame = () => {
 
   stopAnimations();
   clearInterval(gameLoop);
+  console.clear();
 };

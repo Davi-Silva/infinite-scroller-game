@@ -12,3 +12,7 @@ export const player = document.querySelector<HTMLElement>(
   '.player'
 ) as HTMLElement;
 export const pipe = document.querySelector<HTMLElement>('.pipe') as HTMLElement;
+
+export const score = playableArea.querySelector<HTMLElement>(
+  '.score'
+) as HTMLElement;

@@ -1,6 +1,16 @@
 import { clientHeight, clientWidth } from '../constants';
 
-import { GetPositionInObjectType } from '../types/utils';
+import {
+  GetPositionInObjectType,
+  GetDimensionsInObjectType,
+} from '../types/utils';
+
+const getComputedStyle = (selector: string) => {
+  const element = document.querySelector<HTMLElement>(selector) as HTMLElement;
+  const computed = window.getComputedStyle(element);
+
+  return computed;
+};
 
 export const roundNumber = (number: number) =>
   Math.round((number + Number.EPSILON) * 100) / 100;
@@ -16,8 +26,7 @@ export const getPositionInObject = (
   selector: string,
   inPercent?: boolean
 ): GetPositionInObjectType => {
-  const element = document.querySelector<HTMLElement>(selector) as HTMLElement;
-  const computed = window.getComputedStyle(element);
+  const computed = getComputedStyle(selector);
 
   const leftNumber = getPxNumber(computed.left);
   const left = roundNumber((leftNumber / clientWidth) * 100);
@@ -36,5 +45,19 @@ export const getPositionInObject = (
     top: inPercent ? top : topNumber,
     right: inPercent ? right : rightNumber,
     bottom: inPercent ? bottom : bottomNumber,
+  };
+};
+
+export const getDimensionsInObject = (
+  selector: string
+): GetDimensionsInObjectType => {
+  const computed = getComputedStyle(selector);
+
+  const height = getPxNumber(computed.height);
+  const width = getPxNumber(computed.width);
+
+  return {
+    height,
+    width,
   };
 };
