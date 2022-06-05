@@ -1,4 +1,4 @@
-import { GetPositionInObjectType } from '../../types/utils';
+import { GetPositionInObjectType } from '../utils';
 
 export type StateType = {
   player: {

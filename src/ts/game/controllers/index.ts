@@ -1,5 +1,5 @@
 import { player, playableArea } from '../../constants';
-import { hasGameStarted } from '../';
+import { hasGameStarted } from '..';
 
 export const move = (key: string) => {
   if (!hasGameStarted) return;

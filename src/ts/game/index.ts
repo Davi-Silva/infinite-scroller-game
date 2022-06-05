@@ -1,6 +1,6 @@
 import { pipe } from '../constants';
 import { getPositionInObject } from '../utils';
-import { addToRewindBuffer } from '../game/rewind';
+import { addToRewindBuffer } from './rewind';
 import { stopAnimations } from './animations';
 import { stats, updateAssetPosition } from '../stats';
 
