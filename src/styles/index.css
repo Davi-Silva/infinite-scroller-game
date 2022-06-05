@@ -1,0 +1,132 @@
+@keyframes pipeMove {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: calc(-1 * var(--pipe-width));
+  }
+}
+
+.header {
+  height: var(--header-height);
+  width: 100%;
+  background-color: var(--header-background-color);
+}
+
+.header .container {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  padding: 0.7rem 0;
+}
+
+.brand {
+  font-size: var(--header-brand-font-size);
+}
+
+.scoreContainer {
+  display: flex;
+}
+
+.main {
+  width: 100%;
+  height: calc(100vh - calc(var(--header-height) + var(--footer-height)));
+  background-color: var(--main-background-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.playableArea {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.titleScreen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--modal-background-color);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleScreenBtnsContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.startBtn {
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border-radius: var(--btn-round-50);
+  border: 1px solid var(--start-btn-border-color);
+  background-color: var(--start-btn-background-color);
+  color: var(--start-btn-color);
+}
+
+.endGameBtn {
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border-radius: var(--btn-round-50);
+  border: 1px solid var(--end-game-btn-border-color);
+  background-color: var(--end-game-btn-background-color);
+  color: var(--end-game-btn-color);
+}
+
+.player {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--player-background-color);
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+}
+
+.pipe {
+  position: absolute;
+  left: 100%;
+  width: var(--pipe-width);
+  height: var(--pipe-height);
+  background-color: chartreuse;
+  bottom: 0;
+}
+
+.ground {
+  display: flex;
+  flex-direction: column;
+}
+
+.grass,
+.earth {
+  width: 100%;
+}
+
+.grass {
+  background-color: green;
+  height: 1rem;
+}
+
+.earth {
+  background-color: brown;
+  height: 4rem;
+}
+
+.footer {
+  height: var(--footer-height);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p {
+  font-size: var(--footer-p-font-size);
+}
+
+.footer p a {
+  text-decoration: none;
+}

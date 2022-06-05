@@ -1,0 +1,21 @@
+{
+  "name": "infinite-scroller-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.html --open",
+    "build": "parcel build ./src/index.html"
+  },
+  "repository": "git@github.com:Davi-Silva/infinite-scroller-game.git",
+  "author": "Davi Silva <davi@bytes-and-pixels.de>",
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.6.1"
+  },
+  "devDependencies": {
+    "typescript": "4.4.4"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  }
+}
